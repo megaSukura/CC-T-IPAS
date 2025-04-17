@@ -66,7 +66,7 @@ if __name__ == "__main__":
                         help="输出的文件列表文件名 (默认: filelist.txt)。")
     parser.add_argument("--exclude-dir", action="append", default=[".git",".vscode"], # 默认排除 .git
                         help="要排除的目录名 (可多次使用, 例如 --exclude-dir .vscode)。")
-    parser.add_argument("--exclude-file", action="append", default=[],
+    parser.add_argument("--exclude-file", action="append", default=["README.md"],
                         help="要排除的文件名 (可多次使用, 例如 --exclude-file README.md)。")
 
     args = parser.parse_args()
@@ -78,4 +78,4 @@ if __name__ == "__main__":
     args.exclude_file = list(set(args.exclude_file))
 
     generate_file_list(args.repo_path, args.output, args.exclude_dir, args.exclude_file)
-
+    print("请检查filelist.txt是否符合要求")
