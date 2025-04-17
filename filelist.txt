@@ -3,8 +3,6 @@ debug.txt
 README.md
 Startup.lua
 test.lua
-lib/basalt.lua
-lib/basalt1_6_5.lua
 lib/print_r.lua
 lib/testconc.lua
 lib/BasaltMaster/init.lua
@@ -80,12 +78,11 @@ lib/mineIPAS/IPASupdater/inventoryUpdater.lua
 lib/mineIPAS/IPASupdater/peripheralInfoUpdater.lua
 lib/mineIPAS/IPASupdater/worldInfoUpdater.lua
 lib/mineIPAS/UItoolkit/init.lua
-testFile/basalt171.lua
 testFile/basaltPreview.lua
 testFile/im.nfp
 testFile/image.bimg
 testFile/image.nfp
-testFile/main_test - 副本.txt
+testFile/main_test -copy.txt
 testFile/main_test.lua
 testFile/rednet.lua
 testFile/redstoneAnalogOutput.lua
