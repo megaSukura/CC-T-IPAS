@@ -1,0 +1,333 @@
+table: 2bf35966970 {
+  [__index] => table: 2bf35966970 {
+                 *table: 2bf35966970
+               }
+  [init] => function: 2bf359669b0
+  __metatable => table: 2bf35966770 {
+       [setFg] => function: 2bf367335b0
+       [show] => function: 2bf36733510
+       [scrollHandler] => function: 2bf359670f0
+       [updateTerm] => function: 2bf34b7ff10
+       [eventHandler] => function: 2bf35966e70
+       [drawForegroundBox] => function: 2bf35967370
+       [drawTextBox] => function: 2bf35966ef0
+       [__index] => table: 2bf35966770 {
+                      *table: 2bf35966770
+                    }
+       [blit] => function: 2bf35966b30
+       [dragHandler] => function: 2bf35966fb0
+       [getBase] => function: 2bf34b7f910
+       [drawBackgroundBox] => function: 2bf35966d30
+       [setBg] => function: 2bf36732d90
+       [setText] => function: 2bf36732ca0
+       [setCursor] => function: 2bf36733560
+       [hoverHandler] => function: 2bf35966c70
+       [mouseHandler] => function: 2bf35966ff0
+       [mouseUpHandler] => function: 2bf35966bb0
+       [setPalette] => function: 2bf36733e20
+       [render] => function: 2bf359673b0
+       [updateDraw] => function: 2bf34b7f6a0
+       [setSize] => function: 2bf36733240
+       __metatable => table: 2bf35967070 {
+            [getTheme] => function: 2bf35967170
+            [__index] => table: 2bf35967070 {
+                           *table: 2bf35967070
+                         }
+            [setTheme] => function: 2bf35966f70
+            __metatable => table: 2bf35966170 {
+                 [__index] => table: 2bf35966170 {
+                                *table: 2bf35966170
+                              }
+                 [loadLayout] => function: 2bf359661f0
+                 __metatable => table: 2bf35966430 {
+                      [addVisualObject] => function: 2bf35965cf0
+                      [addBaseFrame] => function: 2bf35965930
+                      [addTextfield] => function: 2bf35965730
+                      [addList] => function: 2bf35965f70
+                      [addEvent] => function: 2bf367329d0
+                      [addTimer] => function: 2bf35965830
+                      [addLabel] => function: 2bf359660b0
+                      [keyHandler] => function: 2bf36732c00
+                      [addProgram] => function: 2bf35965ef0
+                      [addDropdown] => function: 2bf359657f0
+                      [addScrollbar] => function: 2bf359658f0
+                      [dragHandler] => function: 2bf36731bc0
+                      [addInput] => function: 2bf35965e30
+                      [keyUpHandler] => function: 2bf367319e0
+                      [addMonitorFrame] => function: 2bf359661b0
+                      [updateZIndex] => function: 2bf35c698a0
+                      [getChild] => function: 2bf359663f0
+                      [addSlider] => function: 2bf359665f0
+                      [getChildrenByType] => function: 2bf35965630
+                      [setFocusedChild] => function: 2bf35965b30
+                      [searchChildren] => function: 2bf35965d30
+                      [addChangeableObject] => function: 2bf359662f0
+                      [sortChildren] => function: 2bf35c69cc0
+                      [removeEvent] => function: 2bf36732a70
+                      [addButton] => function: 2bf35966270
+                      [getDeepChildren] => function: 2bf359660f0
+                      [getFocused] => function: 2bf35ae25f0
+                      [getBase] => function: 2bf35ae21a0
+                      [removeEvents] => function: 2bf367328e0
+                      [addFlexbox] => function: 2bf359659b0
+                      [getEvent] => function: 2bf35965bb0
+                      [loseFocusHandler] => function: 2bf35965a30
+                      [scrollHandler] => function: 2bf36731b70
+                      [addGraph] => function: 2bf359656b0
+                      [removeChildren] => function: 2bf35c69840
+                      [addContainer] => function: 2bf35966530
+                      [addTreeview] => function: 2bf35965970
+                      [listenEvent] => function: 2bf35965870
+                      [mouseUpHandler] => function: 2bf36732b10
+                      [addProgressbar] => function: 2bf35965ab0
+                      [addSwitch] => function: 2bf35965eb0
+                      [addMovableFrame] => function: 2bf359659f0
+                      [addImage] => function: 2bf35965df0
+                      [addMenubar] => function: 2bf359657b0
+                      [addPanee] => function: 2bf359662b0
+                      [addFrame] => function: 2bf35966070
+                      [mouseHandler] => function: 2bf36732ac0
+                      [addThread] => function: 2bf35965fb0
+                      [eventHandler] => function: 2bf359665b0
+                      [customEventHandler] => function: 2bf35965c30
+                      [setImportant] => function: 2bf35c69900
+                      [addRadio] => function: 2bf35965f30
+                      [setPosition] => function: 2bf35ae2aa0
+                      [clearFocusedChild] => function: 2bf359664f0
+                      [charHandler] => function: 2bf367318a0
+                      [addCheckbox] => function: 2bf359656f0
+                      [addChild] => function: 2bf367327f0
+                      [getChildren] => function: 2bf35ae1a80
+                      [getBasalt] => function: 2bf35ae2b00
+                      [__index] => table: 2bf35966430 {
+                                     *table: 2bf35966430
+                                   }
+                      [setSize] => function: 2bf35ae2560
+                      [addScrollableFrame] => function: 2bf35966130
+                      [addObject] => function: 2bf359664b0
+                      [hoverHandler] => function: 2bf36732b60
+                      [addPane] => function: 2bf35965770
+                      [getChildrenAt] => function: 2bf359658b0
+                      [setPalette] => function: 2bf35ae2a10
+                      [getEvents] => function: 2bf35ae2830
+                      [removeChild] => function: 2bf36732890
+                      __metatable => table: 2bf359647f0 {
+                           [addTexture] => function: 2bf35964ff0
+                           [eventHandler] => function: 2bf359648f0
+                           [clearTextures] => function: 2bf35ae1a50
+                           [draw] => function: 2bf36732430
+                           [__index] => table: 2bf359647f0 {
+                                          *table: 2bf359647f0
+                                        }
+                           [removeTexture] => function: 2bf359650b0
+                           __metatable => table: 2bf359648b0 {
+                                [__getElementPathTypes] => function: 2bf35ae1e40
+                                [init] => function: 2bf359646f0
+                                [__index] => table: 2bf359648b0 {
+                                               *table: 2bf359648b0
+                                             }
+                                __metatable => table: 2bf35964670 {
+                                     [__index] => table: 2bf35964670 {
+                                                    *table: 2bf35964670
+                                                  }
+                                     [getShadow] => function: 2bf35ae9370
+                                     [setShadow] => function: 2bf35ae91c0
+                                     [draw] => function: 2bf359646b0
+                                     __metatable => table: 2bf359651f0 {
+                                          [__index] => table: 2bf359651f0 {
+                                                         *table: 2bf359651f0
+                                                       }
+                                          [addBgPolygon] => function: 2bf36732610
+                                          [addBgLine] => function: 2bf36732020
+                                          [addTextEllipse] => function: 2bf367325c0
+                                          [addFgPolygon] => function: 2bf367326b0
+                                          [addTextPolygon] => function: 2bf36731ee0
+                                          [addBgRectangle] => function: 2bf367320c0
+                                          [addFgEllipse] => function: 2bf36732390
+                                          [addFgCircle] => function: 2bf36732980
+                                          [addTextLine] => function: 2bf36731e90
+                                          [addBgEllipse] => function: 2bf36732bb0
+                                          [addBgCircle] => function: 2bf36732070
+                                          [addFgLine] => function: 2bf367327a0
+                                          [addFgRectangle] => function: 2bf36731ad0
+                                          [addTextRectangle] => function: 2bf36731f80
+                                          [addTextCircle] => function: 2bf36732480
+                                          __metatable => table: 2bf35964ef0 {
+                                               [setBorder] => function: 2bf35964770
+                                               [__index] => table: 2bf35964ef0 {
+                                                              *table: 2bf35964ef0
+                                                            }
+                                               [draw] => function: 2bf35965030
+                                               __metatable => table: 2bf35965430 {
+                                                    [animateSize] => function: 2bf35964cb0
+                                                    [animateOffset] => function: 2bf35964cf0
+                                                    [onAnimationDone] => function: 2bf35ae90a0
+                                                    [eventHandler] => function: 2bf35964630
+                                                    [doneHandler] => function: 2bf35964db0
+                                                    [animatePosition] => function: 2bf35965470
+                                                    [__index] => table: 2bf35965430 {
+                                                                   *table: 2bf35965430
+                                                                 }
+                                                    [animateBackground] => function: 2bf359655f0
+                                                    __metatable => table: 2bf359653f0 {
+                                                         [setBackground] => function: 2bf35965570
+                                                         [setBackgroundSymbol] => function: 2bf35964bf0
+                                                         [getBackgroundSymbolColor] => function: 2bf35ae8260
+                                                         [draw] => function: 2bf359653b0
+                                                         [__index] => table: 2bf359653f0 {
+                                                                        *table: 2bf359653f0
+                                                                      }
+                                                         [getBackgroundSymbol] => function: 2bf35ae8500
+                                                         __metatable => table: 2bf35964830 {
+                                                              [addPostDraw] => function: 2bf35ae8110
+                                                              [show] => function: 2bf35ae5cb0
+                                                              [loseFocusHandler] => function: 2bf35ae7630
+                                                              [addPreDraw] => function: 2bf35ae86e0
+                                                              [scrollHandler] => function: 2bf35ae6bb0
+                                                              [keyHandler] => function: 2bf35ae7b70
+                                                              [addText] => function: 2bf367323e0
+                                                              [repositionHandler] => function: 2bf35ae6d00
+                                                              [onLoseFocus] => function: 2bf35ae6a90
+                                                              [onResize] => function: 2bf35ae6d60
+                                                              [charHandler] => function: 2bf35ae7ed0
+                                                              [dragHandler] => function: 2bf36731df0
+                                                              [mouseUpHandler] => function: 2bf35965270
+                                                              [addFg] => function: 2bf36732570
+                                                              [updateDraw] => function: 2bf35ae60d0
+                                                              [addBackgroundBox] => function: 2bf35964d70
+                                                              [getBasalt] => function: 2bf35ae6310
+                                                              [isCoordsInObject] => function: 2bf35ae69a0
+                                                              [addTextBox] => function: 2bf35964a70
+                                                              [getFocusHandler] => function: 2bf35ae7540
+                                                              [addBlit] => function: 2bf36731da0
+                                                              [mouseHandler] => function: 2bf36732930
+                                                              [addDraw] => function: 2bf36731d50
+                                                              [hide] => function: 2bf35ae5ec0
+                                                              [draw] => function: 2bf35ae8740
+                                                              [redraw] => function: 2bf36731e40
+                                                              [render] => function: 2bf35ae82c0
+                                                              [addForegroundBox] => function: 2bf35964bb0
+                                                              [onReposition] => function: 2bf35ae6e80
+                                                              [isFocused] => function: 2bf35ae6df0
+                                                              [getDrawId] => function: 2bf36732340
+                                                              [getAbsolutePosition] => function: 2bf35ae6100
+                                                              [getBase] => function: 2bf35ae5e00
+                                                              [setParent] => function: 2bf359654f0
+                                                              [__index] => table: 2bf35964830 {
+                                                                             *table: 2bf35964830
+                                                                           }
+                                                              [isVisible] => function: 2bf35ae6010
+                                                              [setDrawState] => function: 2bf36731f30
+                                                              [keyUpHandler] => function: 2bf35ae7e70
+                                                              [getRelativePosition] => function: 2bf35ae6160
+                                                              [resizeHandler] => function: 2bf35ae6b20
+                                                              [addBg] => function: 2bf36732840
+                                                              [onGetFocus] => function: 2bf35ae7030
+                                                              [hoverHandler] => function: 2bf35ae6c10
+                                                              [setFocus] => function: 2bf35ae6670
+                                                              __metatable => table: 2bf35963c70 {
+                                                                   [setProperty] => function: 2bf367321b0
+                                                                   [removePropertyObserver] => function: 2bf35964170
+                                                                   [addPropertyObserver] => function: 2bf35963b70
+                                                                   [__index] => table: 2bf35963c70 {
+                                                                                  *table: 2bf35963c70
+                                                                                }
+                                                                   [updatePropertyObservers] => function: 2bf35963ab0
+                                                                   __metatable => table: 2bf359638b0 {
+                                                                        [setX] => function: 2bf36732750
+                                                                        [setXOffset] => function: 2bf36732f70
+                                                                        [onClick] => function: 2bf35acf110
+                                                                        [setBgSymbolColor] => function: 2bf36731b20
+                                                                        [getXOffset] => function: 2bf35966df0
+                                                                        [isEnabled] => function: 2bf35acf920
+                                                                        [setBackground] => function: 2bf36732250
+                                                                        [getTerm] => function: 2bf359666f0
+                                                                        [getProperty] => function: 2bf35963d70
+                                                                        [isType] => function: 2bf359643f0
+                                                                        [enable] => function: 2bf35acfa70
+                                                                        [getBgSymbolColor] => function: 2bf359652b0
+                                                                        [getBackground] => function: 2bf35963770
+                                                                        [getOffset] => function: 2bf35966af0
+                                                                        [getName] => function: 2bf35acf530
+                                                                        [onClickUp] => function: 2bf35acf980
+                                                                        [getIgnoreOffset] => function: 2bf359651b0
+                                                                        [onScroll] => function: 2bf35acf1a0
+                                                                        [setProperty] => function: 2bf35963db0
+                                                                        [setIgnoreOffset] => function: 2bf36731990
+                                                                        [removeEvent] => function: 2bf36732110
+                                                                        [combineProperty] => function: 2bf35963df0
+                                                                        [registerEvent] => function: 2bf36731940
+                                                                        [setType] => function: 2bf36731850
+                                                                        [getBaseFrame] => function: 2bf35acf7a0
+                                                                        [getType] => function: 2bf35964130
+                                                                        [onChar] => function: 2bf35acf200
+                                                                        [getYOffset] => function: 2bf35966870
+                                                                        [setOffset] => function: 2bf35966e30
+                                                                        [getEventSystem] => function: 2bf35acfaa0
+                                                                        [onHover] => function: 2bf35acf350
+                                                                        [customEventHandler] => function: 2bf35acfce0
+                                                                        [setBgSymbol] => function: 2bf367322a0
+                                                                        [getWidth] => function: 2bf35964c30
+                                                                        [getY] => function: 2bf35964930
+                                                                        [setTransparent] => function: 2bf36731d00
+                                                                        [sendEvent] => function: 2bf35acf710
+                                                                        [setZ] => function: 2bf36731c10
+                                                                        [setEnabled] => function: 2bf36732a20
+                                                                        [setWidth] => function: 2bf367318f0
+                                                                        [getBgSymbol] => function: 2bf35963830
+                                                                        [init] => function: 2bf35acf5c0
+                                                                        [listenEvent] => function: 2bf359639b0
+                                                                        [getZ] => function: 2bf35963a30
+                                                                        [getEnabled] => function: 2bf35963c30
+                                                                        [getTransparent] => function: 2bf35963670
+                                                                        [setTerm] => function: 2bf36733150
+                                                                        [setYOffset] => function: 2bf36733060
+                                                                        [disable] => function: 2bf35acf380
+                                                                        [load] => function: 2bf35acfcb0
+                                                                        [getPropertyConfig] => function: 2bf35acf4a0
+                                                                        [getSize] => function: 2bf359650f0
+                                                                        [setPosition] => function: 2bf35964c70
+                                                                        [getPosition] => function: 2bf35964b30
+                                                                        [setHeight] => function: 2bf367322f0
+                                                                        [onKeyUp] => function: 2bf35acf890
+                                                                        [setSize] => function: 2bf35964a30
+                                                                        [getParent] => function: 2bf35acf560
+                                                                        [onDrag] => function: 2bf35acf260
+                                                                        [getVisible] => function: 2bf35964470
+                                                                        [getHeight] => function: 2bf35964d30
+                                                                        [onKey] => function: 2bf35acf4d0
+                                                                        [setForeground] => function: 2bf367324d0
+                                                                        [getRegisteredEvents] => function: 2bf35acf680
+                                                                        [setY] => function: 2bf36732520
+                                                                        [getX] => function: 2bf359649f0
+                                                                        [updateEvents] => function: 2bf35963870
+                                                                        [remove] => function: 2bf35acf620
+                                                                        [setParent] => function: 2bf35acf6e0
+                                                                        [__index] => table: 2bf359638b0 {
+                                                                                       *table: 2bf359638b0
+                                                                                     }
+                                                                        [addProperty] => function: 2bf36731fd0
+                                                                        [setVisible] => function: 2bf36731cb0
+                                                                        [onRelease] => function: 2bf35acf740
+                                                                        [eventHandler] => function: 2bf35acfc50
+                                                                        [getForeground] => function: 2bf35964ab0
+                                                                        [getProperties] => function: 2bf35964330
+                                                                        [onEvent] => function: 2bf35acf470
+                                                                        [getTypes] => function: 2bf35acf2c0
+                                                                        [onLeave] => function: 2bf35acf1d0
+                                                                       }
+                                                                  }
+                                                             }
+                                                        }
+                                                   }
+                                              }
+                                         }
+                                    }
+                               }
+                          }
+                     }
+                }
+           }
+      }
+}
+
