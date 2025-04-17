@@ -25,6 +25,8 @@ local input = function(prompt)
     local choices = {
         "https://",
         "https://raw.githubusercontent.com/",
+        "https://raw.githubusercontent.com/megaSukura/CC-T-IPAS/refs/heads/main/",
+        "https://raw.githubusercontent.com/megaSukura/CC-T-IPAS/refs/heads/main/filelist.txt"
     }
     return read(nil,nil,function(text) return completion.choice(text, choices) end,nil)
 end
