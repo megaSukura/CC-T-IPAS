@@ -1,7 +1,17 @@
 local basalt = require("/lib/BasaltMaster/init")
 local toolkit = require("/lib/mineIPAS/UItoolkit")
+local APS = require("autoPreparationSystem")
 
-local mainFrame = toolkit.makeTaggedFrame(basalt.createFrame())
+if basalt then
+APS.setPrintFunction(function(text)
+    basalt:debug(text)
+end)
+end
+local monitor = peripheral.find("monitor")
+local monitorFrame = basalt.addMonitor()
+monitorFrame:setMonitor(monitor)
+local mainFrame = toolkit.makeTaggedFrame(monitorFrame)
+local craftThread = mainFrame:addThread("craftThread")
 
 local settingPage = mainFrame.addPage("Setting", colors.lightGray)
 local initPage = mainFrame.addPage("Init", colors.lightGray)
@@ -12,21 +22,30 @@ local craftTaskPage = mainFrame.addPage("Task", colors.lightGray)
 settingPage:setLayoutDirection("column"):setLayoutAlignItems("stretch")
     :setLayoutPadding({5,4})
     :setLayoutGap(2)
-local CPUList = {"CPU1", "CPU2", "CPU3", "CPU4", "CPU5", "CPU6", "CPU7", "CPU8", "CPU9", "CPU10"}
+
 settingPage:addButton("CPUsettingButton"):onClick(function(self)
+    APS.loadCPUsConfig()
     --弹出CPU设置界面
-    local popup,content,confirm,cancel = toolkit.createSimpleDialog(mainFrame, "{parent.w/2-10}", "{parent.h/2-5}", 41, 24, "cpu setting",true,true)
-    local textFild= content:addTextfield()
-    for i,cpu in ipairs(CPUList) do
+    local popup,content,confirm,cancel = toolkit.createSimpleDialog(mainFrame, "{parent.w/2-13}", "{parent.h/2-7}", 25, 14, "cpu setting",true,true)
+    local textFild= content:addTextfield():setHeight(5)
+    for cpu,_ in pairs(APS.craftingCPUs) do
+        BPrintTable(basalt,cpu)
         textFild:addLine(cpu)
     end
     confirm:onClick(function(self)
         --保存设置
-        CPUList = {} -- 清空
-        for i,cpu in ipairs(textFild:getLines()) do
-            CPUList[i] = cpu
+        -- 清空:注意,这里不能直接={}来清空,因为这样会导致原表的引用丢失,无法保存
+        for key,_ in pairs(APS.craftingCPUs) do
+            APS.craftingCPUs[key] = nil
         end
-        BPrintTable(basalt,CPUList)
+        for i,cpu in pairs(textFild:getLines()) do
+            APS.craftingCPUs[cpu] = true
+        end
+        APS.saveCPUsConfig()
+        if APS.isInit() then
+            APS.loadCPUsConfig()
+            APS.initFreeCPU()
+        end
         popup:close()
     end)
 end):setText("CPU setting")
@@ -67,7 +86,12 @@ local initPageTable = {
 local initPageObj = toolkit.createUIFromTable(initPage, initPageTable)
 -- toolkit.createAlert(mainFrame,"{parent.w/2-20}","{parent.h/2-6}",40,20,"")
 initPageObj.startButton:onClick(function(self)
-    --检查peripheral,初始化,初始化失败则弹出提示,初始化成功则跳转到下一页
+    --初始化,初始化失败则弹出提示,初始化成功则跳转到下一页
+    if APS.init() then
+        mainFrame.topBar:selectItem(3)
+    else
+        toolkit.createAlert(mainFrame,"{parent.w/2-20}","{parent.h/2-6}",40,20,"Initialization failed!")
+    end
 end)
 initPageObj.settingButton:onClick(function(self)
     mainFrame.topBar:selectItem(1)
@@ -93,6 +117,7 @@ local itemListReadTable = {
                     type = "Label",
                     text = "Task list summary",
                     background = colors.lightBlue,
+                    textAlign = "center",
                 },
                 {
                     type = "List",
@@ -117,12 +142,6 @@ local itemListReadTable = {
                 },
                 {
                     type = "Button",
-                    name = "deleteButton",
-                    text = "Delete selected Task",
-                    border = colors.white,
-                },
-                {
-                    type = "Button",
                     name = "StartButton",
                     text = "Start->",
                     border = colors.white,
@@ -134,12 +153,24 @@ local itemListReadTable = {
 }
 local itemListReadObj = toolkit.createUIFromTable(itemListReadPage, itemListReadTable)
 -- 按下刷新按钮,尝试导出物品列表中的物品,并获得需要制作的任务列表
--- 按下删除按钮,删除选中的任务
+itemListReadObj.readButton:onClick(function(self)
+    APS.getData()
+    itemListReadObj.taskList:clear()
+    
+    for i,task in ipairs(APS.itemsList) do
+        local taskStr = task.id.." x"..task.quantity
+        itemListReadObj.taskList:addItem(taskStr)
+    end
+end)
+-- 按下开始按钮,并跳转到下一页
+itemListReadObj.StartButton:onClick(function(self)
+    mainFrame.topBar:selectItem(4)
+end)
 
 --#endregion
 
 --#region 任务页面
-craftTaskPage:setLayoutDirection("column"):setLayoutPadding({2,3})
+craftTaskPage:setLayoutDirection("column"):setLayoutPadding({1,1})
     :setLayoutJustifyContent("center"):setLayoutAlignItems("stretch")
     :setLayoutGap(1)
 
@@ -155,7 +186,7 @@ local craftTaskTable = {
         name = "logList",
         background = colors.lightGray,
         foreground = colors.black,
-        flexGrow = 1,
+        flexGrow = 2,
         flexShrink = 5,
         flexBasis = 2,
     },
@@ -169,7 +200,7 @@ local craftTaskTable = {
         type = "Layout",
         layoutDirection = "row",
         layoutJustifyContent = "space-between",
-        layoutAlignItems = "stretch",
+        layoutAlignItems = "center",
         layoutPadding = 0,
         baseDraw = false,
         height = 3,
@@ -177,7 +208,7 @@ local craftTaskTable = {
             {
                 type = "Label",
                 text = "failed task: ",
-                fontSize = 2
+                fontSize = 1
             },
             {
                 type = "Button",
@@ -200,8 +231,64 @@ local craftTaskObj = toolkit.createUIFromTable(craftTaskPage, craftTaskTable)
 craftTaskObj.taskProgress:setProgressBar(colors.green, '/',colors.yellow)
 craftTaskObj.dividingLine:setBackground(colors.lightGray, "\183", colors.gray)
 craftTaskObj.logList:addItem("Log:")
---#endregion
+--在读取物品列表页面中,按下开始按钮,开始准备物品
+local function startTask()
+    APS.tasking(
+        --onAddTask
+        function(id,quantity)
+            craftTaskObj.logList:addItem("Add task: "..id.." x"..quantity)
+            craftTaskObj.taskProgress:setProgress(APS.getTaskProgress())
+        end,
+        --onStartTask
+        function(id,quantity,cpu)
+            craftTaskObj.logList:addItem("Start task: "..id.." x"..quantity.." on "..cpu)
+        end,
+        --onTaskSuccess
+        function(id,quantity,cpu)
+            craftTaskObj.logList:addItem("Task success: "..id.." x"..quantity.." on "..cpu)
+            craftTaskObj.taskProgress:setProgress(APS.getTaskProgress())
+        end,
+        --onTaskFailed
+        function(id,quantity,cpu)
+            craftTaskObj.logList:addItem("Task failed: "..id.." x"..quantity.." on "..cpu)
+            craftTaskObj.taskProgress:setProgress(APS.getTaskProgress())
+            craftTaskObj.failedTaskList:addItem(id.." x"..quantity)
+        end,
+        --onDone
+        function()
+            craftTaskObj.logList:addItem("All tasks are done!")
+            craftTaskObj.taskProgress:setProgress(APS.getTaskProgress())
+        end
+    )
+end
+itemListReadObj.StartButton:onClick(function(self)
+    craftTaskObj.logList:clear()
+    craftTaskObj.failedTaskList:clear()
+    craftTaskObj.taskProgress:setProgress(0)
+    if (craftThread:getStatus() or "nil") ~= "suspended" then
 
+        craftThread:start(startTask)
+
+    else
+        basalt:debug("task is " .. (craftThread:getStatus() or "nil"))
+    end
+end)
+craftTaskObj.retryButton:onClick(function(self)
+    if (craftThread:getStatus() or "nil") ~= "suspended" then
+    -- 重试失败的任务,不删除log
+    craftTaskObj.logList:addItem("Retry:")
+    craftTaskObj.failedTaskList:clear()
+    craftTaskObj.taskProgress:setProgress(0)
+
+        craftThread:start(startTask)
+
+    else
+        basalt:debug("task is " .. (craftThread:getStatus() or "nil"))
+    end
+end)
+
+
+--#endregion
 
 
 
