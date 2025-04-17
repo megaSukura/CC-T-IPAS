@@ -13,7 +13,7 @@ def generate_file_list(repo_path, output_file="filelist.txt", exclude_dirs=None,
         exclude_files (list): 需要排除的文件名列表 (例如 ["generate_filelist.py", "README.md"])。
     """
     if exclude_dirs is None:
-        exclude_dirs = [".git"] # 默认排除 .git 目录
+        exclude_dirs = [".git",".vscode"] # 默认排除 .git 目录
     if exclude_files is None:
         exclude_files = [os.path.basename(__file__), output_file] # 默认排除脚本自身和输出文件
 
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     parser.add_argument("repo_path", help="本地 GitHub 仓库的根目录路径。")
     parser.add_argument("-o", "--output", default="filelist.txt",
                         help="输出的文件列表文件名 (默认: filelist.txt)。")
-    parser.add_argument("--exclude-dir", action="append", default=[".git"], # 默认排除 .git
+    parser.add_argument("--exclude-dir", action="append", default=[".git",".vscode"], # 默认排除 .git
                         help="要排除的目录名 (可多次使用, 例如 --exclude-dir .vscode)。")
     parser.add_argument("--exclude-file", action="append", default=[],
                         help="要排除的文件名 (可多次使用, 例如 --exclude-file README.md)。")
