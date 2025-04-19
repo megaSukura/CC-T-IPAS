@@ -181,6 +181,10 @@ end
 if repoBaseUrl == "" or repoBaseUrl == nil then
     repoBaseUrl = input("input repoBaseUrl: ")
 end
+if localBaseDir == "" or localBaseDir == nil then
+    localBaseDir = input("input localBaseDir: ")
+end
+
 if type(filelistUrl) ~= 'string' or type(repoBaseUrl) ~= 'string' then
     printError("filelistUrl or repoBaseUrl is not a string")
     return
