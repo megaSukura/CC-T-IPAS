@@ -1,5 +1,6 @@
+.gitignore
 download.lua
-README.md
+generate_filelist.py
 Startup.lua
 lib/input.lua
 lib/print_r.lua
